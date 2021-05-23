@@ -1,8 +1,9 @@
-![Icon](https://github.com/Spelchure/Binance.API/tree/master/Binance.API.Client/BinanceLogo.png?raw=true)  
+![Icon](https://github.com/Spelchure/Binance.API/blob/master/Binance.API.Client/BinanceLogo.png?raw=true)
 # Binance API Implementation in C# 
 ### Basic implementation of Binance API in C#
 
-![GitHub](https://img.shields.io/github/license/Spelchure/Binance.API?style=flat-square) 
+
+[![GitHub license](https://img.shields.io/github/license/spelchure/Binance.API)](https://github.com/Spelchure/Binance.API/blob/master/LICENSE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Spelchure/Binance.API?style=flat-square)
 ![GitHub top language](https://img.shields.io/github/languages/top/Spelchure/Binance.API?style=flat-square)
 
@@ -34,13 +35,13 @@ public BinanceClient(IApiClient apiClient)
 - Currently only supports *MARKET_DATA* API calls.
 
 ## Documentation
-Documentation resides in [Documentation](https://github.com/Spelchure/Binance.API/tree/master/Documentation) folder.
+Documentation resides in [Documentation](https://github.com/Spelchure/Binance.API/blob/master/Documentation) folder.
 - Documentation for API calls and information:
-  - [MarketData API calls](https://github.com/Spelchure/Binance.API/tree/master/Documentation/MarketDataMethods.md)
+  - [MarketData API calls](https://github.com/Spelchure/Binance.API/blob/master/Documentation/MarketDataMethods.md)
 - Documentation about Project
-  - [Project](https://github.com/Spelchure/Binance.API/tree/master/Documentation/Project.md)
+  - [Project](https://github.com/Spelchure/Binance.API/blob/master/Documentation/Project.md)
 - Doxygen generated documentation
-  - [Doxygen](https://github.com/Spelchure/Binance.API/tree/master/Documentation/doxygen)
+  - [Doxygen](https://github.com/Spelchure/Binance.API/blob/master/Documentation/doxygen)
 
 ## Dependencies
 *Project Target Framework:* **4.6** <br/>
