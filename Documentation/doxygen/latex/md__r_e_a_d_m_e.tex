@@ -1,0 +1,49 @@
+ ~\newline
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md50}{}\doxysection{Binance A\+P\+I Implementation in C}\label{md__r_e_a_d_m_e_autotoc_md50}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md51}{}\doxysubsubsection{Basic implementation of Binance A\+P\+I in C}\label{md__r_e_a_d_m_e_autotoc_md51}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md52}{}\doxysubsection{Getting Started}\label{md__r_e_a_d_m_e_autotoc_md52}
+Firstly create instance of the A\+P\+I\+Client 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var apiClient = new ApiClient("@API-\/KEY","@API-\/SECRET");}
+\end{DoxyCode}
+
+
+Create an instance of Binance\+Client 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var binanceClient = new BinanceClient(apiClient);}
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md53}{}\doxysubsubsection{Signature of Api\+Client and Binance\+Client Methods}\label{md__r_e_a_d_m_e_autotoc_md53}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public ApiClient(string apiKey, string apiSecret, string apiUrl = @"https://api1.binance.com", bool addDefaultHeaders = true)}
+\DoxyCodeLine{public BinanceClient(IApiClient apiClient) }
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{api\+Key}} -\/ {\itshape Key used to authenticate within the A\+PI. (Not required for Market\+Data or unsigned calls.)}
+\item {\bfseries{api\+Secret}} -\/ {\itshape A\+PI secret to be used in signed A\+PI calls. (Not required for Market\+Data or unsigned calls.)}
+\item {\bfseries{api\+Url}} -\/ {\itshape \mbox{\hyperlink{namespace_binance}{Binance}} A\+PI base U\+RL. (Optional)}
+\item {\bfseries{add\+Default\+Headers}} -\/ {\itshape Add default headers or not.}
+\item {\bfseries{api\+Client}} -\/ {\itshape Instance of Api\+Client.}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md54}{}\doxysubsection{Features}\label{md__r_e_a_d_m_e_autotoc_md54}
+
+\begin{DoxyItemize}
+\item Well documented.
+\item {\bfseries{Asynchronous}} calls to \mbox{\hyperlink{namespace_binance}{Binance}} A\+PI.
+\item {\bfseries{Includes}} unit tests and {\bfseries{example}} application.
+\item Currently only supports {\itshape M\+A\+R\+K\+E\+T\+\_\+\+D\+A\+TA} A\+PI calls.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md55}{}\doxysubsection{Documentation}\label{md__r_e_a_d_m_e_autotoc_md55}
+Documentation resides in \href{https://github.com/Spelchure/Binance.API/tree/master/Documentation}{\texttt{ Documentation}} folder.
+\begin{DoxyItemize}
+\item Documentation for A\+PI calls and information\+:
+\begin{DoxyItemize}
+\item \href{https://github.com/Spelchure/Binance.API/tree/master/Documentation/MarketDataMethods.md}{\texttt{ Market\+Data A\+PI calls}}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md56}{}\doxysubsection{License}\label{md__r_e_a_d_m_e_autotoc_md56}
+This project licensed under \href{https://www.gnu.org/licenses/gpl-3.0.txt}{\texttt{ G\+NU G\+PL v3}}.\hypertarget{md__r_e_a_d_m_e_autotoc_md57}{}\doxysubsection{Thanks}\label{md__r_e_a_d_m_e_autotoc_md57}
+Thanks for {\bfseries{morpheums}} for some advice on coding. \href{https://github.com/morpheums/Binance.API.Csharp.Client}{\texttt{ Check his repository}} 

@@ -1,0 +1,81 @@
+\hypertarget{class_binance_1_1_a_p_i_1_1_client_1_1_api_client}{}\doxysection{Binance.\+A\+P\+I.\+Client.\+Api\+Client Class Reference}
+\label{class_binance_1_1_a_p_i_1_1_client_1_1_api_client}\index{Binance.API.Client.ApiClient@{Binance.API.Client.ApiClient}}
+Inheritance diagram for Binance.\+A\+P\+I.\+Client.\+Api\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_binance_1_1_a_p_i_1_1_client_1_1_api_client}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_api_client_aaf27e8e4d16734f38448ff9395270d5a}{Api\+Client}} (string api\+Key, string api\+Secret, string api\+Url=@\char`\"{}https\+://api1.\+binance.\+com\char`\"{}, bool add\+Default\+Headers=true)
+\begin{DoxyCompactList}\small\item\em ctor of \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_api_client}{Api\+Client}} \end{DoxyCompactList}\item 
+async Task$<$ T $>$ \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_api_client_a3ae982a85b1234d5b94461acb7d3af22}{Api\+Call\+Async$<$ T $>$}} (\mbox{\hyperlink{namespace_binance_1_1_a_p_i_1_1_models_1_1_enums_ac76a13530a62fd396eaa4721f28abe89}{Api\+Methods}} method, string end\+Point, bool is\+Signed=false, string parameters=null)
+\begin{DoxyCompactList}\small\item\em Calls \mbox{\hyperlink{namespace_binance_1_1_a_p_i}{A\+PI}} Method asynchronously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_binance_1_1_a_p_i_1_1_client_1_1_api_client_aaf27e8e4d16734f38448ff9395270d5a}\label{class_binance_1_1_a_p_i_1_1_client_1_1_api_client_aaf27e8e4d16734f38448ff9395270d5a}} 
+\index{Binance.API.Client.ApiClient@{Binance.API.Client.ApiClient}!ApiClient@{ApiClient}}
+\index{ApiClient@{ApiClient}!Binance.API.Client.ApiClient@{Binance.API.Client.ApiClient}}
+\doxysubsubsection{\texorpdfstring{ApiClient()}{ApiClient()}}
+{\footnotesize\ttfamily Binance.\+A\+P\+I.\+Client.\+Api\+Client.\+Api\+Client (\begin{DoxyParamCaption}\item[{string}]{api\+Key,  }\item[{string}]{api\+Secret,  }\item[{string}]{api\+Url = {\ttfamily @\char`\"{}https\+://api1.binance.com\char`\"{}},  }\item[{bool}]{add\+Default\+Headers = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+ctor of \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_api_client}{Api\+Client}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em api\+Key} & \mbox{\hyperlink{namespace_binance_1_1_a_p_i}{A\+PI}} key to be used within the \mbox{\hyperlink{namespace_binance_1_1_a_p_i}{A\+PI}}\\
+\hline
+{\em api\+Secret} & \mbox{\hyperlink{namespace_binance_1_1_a_p_i}{A\+PI}} secret to be used signed Calls.\\
+\hline
+{\em api\+Url} & \mbox{\hyperlink{namespace_binance}{Binance}} \mbox{\hyperlink{namespace_binance_1_1_a_p_i}{A\+PI}} base U\+RL\\
+\hline
+{\em add\+Default\+Headers} & Add default headers or not\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_binance_1_1_a_p_i_1_1_client_1_1_api_client_a3ae982a85b1234d5b94461acb7d3af22}\label{class_binance_1_1_a_p_i_1_1_client_1_1_api_client_a3ae982a85b1234d5b94461acb7d3af22}} 
+\index{Binance.API.Client.ApiClient@{Binance.API.Client.ApiClient}!ApiCallAsync$<$ T $>$@{ApiCallAsync$<$ T $>$}}
+\index{ApiCallAsync$<$ T $>$@{ApiCallAsync$<$ T $>$}!Binance.API.Client.ApiClient@{Binance.API.Client.ApiClient}}
+\doxysubsubsection{\texorpdfstring{ApiCallAsync$<$ T $>$()}{ApiCallAsync< T >()}}
+{\footnotesize\ttfamily async Task$<$T$>$ Binance.\+A\+P\+I.\+Client.\+Api\+Client.\+Api\+Call\+Async$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_binance_1_1_a_p_i_1_1_models_1_1_enums_ac76a13530a62fd396eaa4721f28abe89}{Api\+Methods}}}]{method,  }\item[{string}]{end\+Point,  }\item[{bool}]{is\+Signed = {\ttfamily false},  }\item[{string}]{parameters = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Calls \mbox{\hyperlink{namespace_binance_1_1_a_p_i}{A\+PI}} Method asynchronously. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type to which the response content will be converted.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em method} & H\+T\+TP method.\\
+\hline
+{\em end\+Point} & Url endpoint.\\
+\hline
+{\em is\+Signed} & Specifies if the request needs a signature.\\
+\hline
+{\em parameters} & Request parameters.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Not tested errors !! Check \href{https://binance-docs.github.io/apidocs/spot/en/\#general-api-information}{\texttt{ https\+://binance-\/docs.\+github.\+io/apidocs/spot/en/\#general-\/api-\/information}}
+
+Implements \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_api_client_ac551539811f8e900eb65411a6538dcaa}{Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Api\+Client}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Binance.\+A\+P\+I.\+Client/Api\+Client.\+cs\end{DoxyCompactItemize}

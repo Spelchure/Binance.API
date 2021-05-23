@@ -1,0 +1,422 @@
+{\bfseries{Table of Contents}} {\itshape generated with \href{https://github.com/thlorenz/doctoc}{\texttt{ Doc\+Toc}}}
+
+
+\begin{DoxyItemize}
+\item \href{\#market-data-methods}{\texttt{ Market Data Methods}}
+\begin{DoxyItemize}
+\item \href{\#testconnectivity}{\texttt{ Test\+Connectivity}}
+\item \href{\#checkservertime}{\texttt{ Check\+Server\+Time}}
+\item \href{\#getorderbook}{\texttt{ Get\+Order\+Book}}
+\item \href{\#getrecenttradeslist}{\texttt{ Get\+Recent\+Trades\+List}}
+\item \href{\#getaggregatetrades}{\texttt{ Get\+Aggregate\+Trades}}
+\item \href{\#getticker24hrpricechange}{\texttt{ Get\+Ticker24\+Hr\+Price\+Change}}
+\item \href{\#getsymbolprice}{\texttt{ Get\+Symbol\+Price}}
+\item \href{\#getsymbolorderbook}{\texttt{ Get\+Symbol\+Order\+Book}}
+\item \href{\#getcandlestickdata}{\texttt{ Get\+Candlestick\+Data}}
+\item \href{\#getexchangeinfo}{\texttt{ Get\+Exchange\+Info}}
+\item \href{\#getcurrentaverageprice}{\texttt{ Get\+Current\+Average\+Price}}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__documentation__market_data_methods_autotoc_md0}{}\doxysection{Market Data Methods}\label{md__documentation__market_data_methods_autotoc_md0}
+\hypertarget{md__documentation__market_data_methods_autotoc_md1}{}\doxysubsection{Test\+Connectivity}\label{md__documentation__market_data_methods_autotoc_md1}
+Test connectivity to R\+E\+ST A\+PI.\hypertarget{md__documentation__market_data_methods_autotoc_md2}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var result = binanceClient.TestConnectivity().Result; }
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md3}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public async Task<dynamic> TestConnectivity()}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md4}{}\doxysubsection{Check\+Server\+Time}\label{md__documentation__market_data_methods_autotoc_md4}
+Test connectivity to Rest A\+PI and get the current server time\hypertarget{md__documentation__market_data_methods_autotoc_md5}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md5}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var result = binanceClient.CheckServerTime().Result;}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md6}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public async Task<ModelServerTime> CheckServerTime()}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md7}{}\doxysubsubsection{Model for Server\+Time}\label{md__documentation__market_data_methods_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c\#\}}
+\DoxyCodeLine{ public class ModelServerTime}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{       }
+\DoxyCodeLine{       [JsonProperty("serverTime")]  }
+\DoxyCodeLine{       public long ServerTime \{ get; set; \}}
+\DoxyCodeLine{   \}}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md8}{}\doxysubsection{Get\+Order\+Book}\label{md__documentation__market_data_methods_autotoc_md8}
+Get order book for specific symbol\hypertarget{md__documentation__market_data_methods_autotoc_md9}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var result = binanceClient.GetOrderBook("BTCUSDT");}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md10}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public async Task<ModelOrderBook> GetOrderBook(string symbol, int limit = 100)}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md11}{}\doxysubsubsection{Model for Order\+Book}\label{md__documentation__market_data_methods_autotoc_md11}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c\#\}}
+\DoxyCodeLine{public class ModelOrderBookOffer}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{       public decimal Price \{ get; set; \}}
+\DoxyCodeLine{       public decimal Quantity \{ get; set; \}}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{public class ModelOrderBook}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{       public long LastUpdateId \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public IEnumerable<ModelOrderBookOffer> Bids \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public IEnumerable<ModelOrderBookOffer> Asks \{ get; set; \}}
+\DoxyCodeLine{   \}}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md12}{}\doxysubsection{Get\+Recent\+Trades\+List}\label{md__documentation__market_data_methods_autotoc_md12}
+Get recent trades for given symbol\hypertarget{md__documentation__market_data_methods_autotoc_md13}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md13}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var result = binanceClient.GetRecentTradesList("BTCUSDT").Result;}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md14}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md14}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public async Task<IEnumerable<ModelRecentTradesList>> GetRecentTradesList(string symbol, int limit = 500)}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md15}{}\doxysubsubsection{Model for Recent\+Trades}\label{md__documentation__market_data_methods_autotoc_md15}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c\#\}}
+\DoxyCodeLine{public class ModelRecentTradesList}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{       [JsonProperty("id")]}
+\DoxyCodeLine{       public int Id \{ get; set; \}}
+\DoxyCodeLine{       }
+\DoxyCodeLine{       [JsonProperty("price")]}
+\DoxyCodeLine{       public string Price \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("qty")]}
+\DoxyCodeLine{       public string Qty \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("quoteQty")]}
+\DoxyCodeLine{       public string QuoteQty \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("time")]}
+\DoxyCodeLine{       public long Time \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("isBuyerMaker")]}
+\DoxyCodeLine{       public bool IsBuyerMaker \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("isBestMatch")]}
+\DoxyCodeLine{       public bool IsBestMatch \{ get; set; \}}
+\DoxyCodeLine{   \}}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md16}{}\doxysubsection{Get\+Aggregate\+Trades}\label{md__documentation__market_data_methods_autotoc_md16}
+Get compressed, aggregate trades.\hypertarget{md__documentation__market_data_methods_autotoc_md17}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md17}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var result = binanceClient.GetAggregateTrades("BTCUSDT");}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md18}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md18}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public async Task<IEnumerable<ModelAggregateTrades>> GetAggregateTrades(string symbol, long fromId = 0, long startTime = 0, long endTime = 0, int limit = 500)}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md19}{}\doxysubsubsection{Model for Aggregate\+Trades}\label{md__documentation__market_data_methods_autotoc_md19}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public class ModelAggregateTrades}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        [JsonProperty("a")]}
+\DoxyCodeLine{        public long AggregateTradeId \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        [JsonProperty("p")]}
+\DoxyCodeLine{        public string Price \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        [JsonProperty("q")]}
+\DoxyCodeLine{        public string Quantity \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        [JsonProperty("f")]}
+\DoxyCodeLine{        public long FirstTradeId \{ get; set; \}}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        [JsonProperty("l")]}
+\DoxyCodeLine{        public long LastTradeId \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        [JsonProperty("T")]}
+\DoxyCodeLine{        public long Timestamp \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        [JsonProperty("m")]}
+\DoxyCodeLine{        public bool IsBuyerMaker \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        [JsonProperty("M")]}
+\DoxyCodeLine{        public bool IsBestPriceMatch \{ get; set; \}}
+\DoxyCodeLine{    \}}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md20}{}\doxysubsection{Get\+Ticker24\+Hr\+Price\+Change}\label{md__documentation__market_data_methods_autotoc_md20}
+24 hour rolling window price change statistics. Careful when accessing this with no symbol.\hypertarget{md__documentation__market_data_methods_autotoc_md21}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md21}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var result =  binanceClient.GetTicker24HrPriceChange("BTCUSDT")).Result;}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md22}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md22}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public async Task<dynamic> GetTicker24HrPriceChange(string symbol)}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md23}{}\doxysubsubsection{Model for 24\+Hr\+Price\+Change}\label{md__documentation__market_data_methods_autotoc_md23}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c\#\}}
+\DoxyCodeLine{public class Model24HrPriceChangeStats}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{       [JsonProperty("symbol")]}
+\DoxyCodeLine{       public string Symbol \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("priceChange")]}
+\DoxyCodeLine{       public string PriceChange \{ get; set; \}}
+\DoxyCodeLine{       }
+\DoxyCodeLine{       [JsonProperty("priceChangePercent")]}
+\DoxyCodeLine{       public string PriceChangePercent \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("weightedAvgPrice")]}
+\DoxyCodeLine{       public string WeightedAvgPrice \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("prevClosePrice")]}
+\DoxyCodeLine{       public string PrevClosePrice \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("lastPrice")]}
+\DoxyCodeLine{       public string LastPrice \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("lastQty")]}
+\DoxyCodeLine{       public string LastQty \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("bidPrice")]}
+\DoxyCodeLine{       public string BidPrice \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("askPrice")]}
+\DoxyCodeLine{       public string AskPrice \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("openPrice")]}
+\DoxyCodeLine{       public string OpenPrice \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("highPrice")]}
+\DoxyCodeLine{       public string HighPrice \{ get; set; \}}
+\DoxyCodeLine{       }
+\DoxyCodeLine{       [JsonProperty("lowPrice")]}
+\DoxyCodeLine{       public string LowPrice \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("volume")]}
+\DoxyCodeLine{       public string Volume \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("quoteVolume")]}
+\DoxyCodeLine{       public string QuoteVolume \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("openTime")]}
+\DoxyCodeLine{       public long OpenTime \{ get; set; \}}
+\DoxyCodeLine{      }
+\DoxyCodeLine{       [JsonProperty("closeTime")]}
+\DoxyCodeLine{       public long CloseTime \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("firstId")]}
+\DoxyCodeLine{       public long FirstId \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("lastId")]}
+\DoxyCodeLine{       public long LastId \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("count")]}
+\DoxyCodeLine{       public long Count \{ get; set; \}}
+\DoxyCodeLine{   \}}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md24}{}\doxysubsection{Get\+Symbol\+Price}\label{md__documentation__market_data_methods_autotoc_md24}
+Latest price for a symbol or symbols.\hypertarget{md__documentation__market_data_methods_autotoc_md25}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md25}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var result = binanceClient.GetSymbolPrice("BTCUSDT").Result;}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md26}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md26}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public async Task<dynamic> GetSymbolPrice(string symbol)}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md27}{}\doxysubsubsection{Model for Symbol\+Price}\label{md__documentation__market_data_methods_autotoc_md27}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public class ModelSymbolPrice}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        [JsonProperty("symbol")]}
+\DoxyCodeLine{        public string Symbol \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        [JsonProperty("price")]}
+\DoxyCodeLine{        public string Price \{ get; set; \}}
+\DoxyCodeLine{    \}}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md28}{}\doxysubsection{Get\+Symbol\+Order\+Book}\label{md__documentation__market_data_methods_autotoc_md28}
+Best price/qty on the order book for a symbol or symbols.\hypertarget{md__documentation__market_data_methods_autotoc_md29}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md29}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var result = binanceClient.GetSymbolOrderBook("BTCUSDT").Result;}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md30}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md30}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public async Task<dynamic> GetSymbolOrderBook(string symbol)}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md31}{}\doxysubsubsection{Model for Symbol\+Order\+Book}\label{md__documentation__market_data_methods_autotoc_md31}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c\#\}}
+\DoxyCodeLine{public class ModelSymbolOrderBook}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{       [JsonProperty("symbol")]  }
+\DoxyCodeLine{       public string Symbol \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("bidPrice")]  }
+\DoxyCodeLine{       public string BidPrice \{ get; set; \}}
+\DoxyCodeLine{       }
+\DoxyCodeLine{       [JsonProperty("bidQty")]  }
+\DoxyCodeLine{       public string BidQty \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("askPrice")]  }
+\DoxyCodeLine{       public string AskPrice \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("askQty")]  }
+\DoxyCodeLine{       public string AskQty \{ get; set; \}}
+\DoxyCodeLine{   \}}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md32}{}\doxysubsection{Get\+Candlestick\+Data}\label{md__documentation__market_data_methods_autotoc_md32}
+Get candlestick bars for a symbol\hypertarget{md__documentation__market_data_methods_autotoc_md33}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md33}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{DateTime dateTimeStart = new DateTime(2021, 4, 10);}
+\DoxyCodeLine{DateTime dateTimeEnd = new DateTime(2021, 4, 12);}
+\DoxyCodeLine{var result = binanceClient.GetCandlestickData("BTCUSDT",Models.Enums.TimeInterval.Hours\_4, dateTimeStart,dateTimeEnd).Result;}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md34}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md34}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public async Task<IEnumerable<ModelCandlestick>> GetCandlestickData(string symbol, TimeInterval interval, DateTime? startTime = null, DateTime? endTime = null, int limit = 500)}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md35}{}\doxysubsubsection{Model for Candlestick\+Data}\label{md__documentation__market_data_methods_autotoc_md35}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c\#\}}
+\DoxyCodeLine{ public class ModelCandlestick}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{       public long OpenTime \{ get; set; \}}
+\DoxyCodeLine{       }
+\DoxyCodeLine{       public decimal Open \{ get; set; \}}
+\DoxyCodeLine{       }
+\DoxyCodeLine{       public decimal High \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public decimal Low \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public decimal Close \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public decimal Volume \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public long CloseTime \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public decimal QuoteAssetVolume \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public int NumberOfTrades \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public decimal TakerBuyBaseAssetVolume \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public decimal TakerBuyQuoteAssetVolume \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       public decimal Ignore \{ get; set; \}}
+\DoxyCodeLine{   \}}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md36}{}\doxysubsection{Get\+Exchange\+Info}\label{md__documentation__market_data_methods_autotoc_md36}
+Get current exchange trading rules and symbol information\hypertarget{md__documentation__market_data_methods_autotoc_md37}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md37}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{var result = binanceClient.GetExchangeInfo(new List<string>() \{ "BTCUSDT", "BNBUSDT" \}).Result;}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md38}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md38}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{public async Task<ModelExchangeInfo> GetExchangeInfo(List<string> symbols)}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md39}{}\doxysubsubsection{Model for Exchange\+Info}\label{md__documentation__market_data_methods_autotoc_md39}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c\#\}}
+\DoxyCodeLine{public class ModelExchangeInfo}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("timezone")]}
+\DoxyCodeLine{       public string Timezone \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("serverTime")]}
+\DoxyCodeLine{       public long ServerTime \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("rateLimits")]}
+\DoxyCodeLine{       public IEnumerable<ModelRateLimit> RateLimits \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("exhangeFilters")]}
+\DoxyCodeLine{       public IEnumerable<object> ExhangeFilters \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("symbols")]}
+\DoxyCodeLine{       public IEnumerable<ModelSymbol> Symbols \{ get; set; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \}}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md40}{}\doxysubsection{Get\+Current\+Average\+Price}\label{md__documentation__market_data_methods_autotoc_md40}
+Gets average price for specified symbol.\hypertarget{md__documentation__market_data_methods_autotoc_md41}{}\doxysubsubsection{Example}\label{md__documentation__market_data_methods_autotoc_md41}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c\#\}}
+\DoxyCodeLine{   var averagePrice = binanceClient.GetCurrentAveragePrice("BTCUSDT").Result;}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md42}{}\doxysubsubsection{Method Signature}\label{md__documentation__market_data_methods_autotoc_md42}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c\#\}}
+\DoxyCodeLine{   public async Task<ModelCurrentAveragePrice> GetCurrentAveragePrice(string symbol)}
+\end{DoxyCode}
+\hypertarget{md__documentation__market_data_methods_autotoc_md43}{}\doxysubsubsection{Model of Current\+Average\+Price}\label{md__documentation__market_data_methods_autotoc_md43}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c\#\}}
+\DoxyCodeLine{public class ModelCurrentAveragePrice}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{       }
+\DoxyCodeLine{       [JsonProperty("mins")]}
+\DoxyCodeLine{       public int Mins \{ get; set;  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{       [JsonProperty("price")]}
+\DoxyCodeLine{       public string Price \{ get; set; \} }
+\DoxyCodeLine{   \}}
+\end{DoxyCode}
+ 

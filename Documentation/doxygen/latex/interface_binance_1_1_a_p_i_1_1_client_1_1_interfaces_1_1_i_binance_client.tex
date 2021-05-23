@@ -1,0 +1,303 @@
+\hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client}{}\doxysection{Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client Interface Reference}
+\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client}\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+
+
+Interface for \mbox{\hyperlink{namespace_binance}{Binance}} \mbox{\hyperlink{namespace_binance_1_1_a_p_i_1_1_client}{Client}}.  
+
+
+Inheritance diagram for Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ dynamic $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_ac0500165f4933c24ed07f8986e581dc5}{Test\+Connectivity}} ()
+\begin{DoxyCompactList}\small\item\em Test connectivity to \mbox{\hyperlink{namespace_binance_1_1_a_p_i}{A\+PI}}. Weight\+:1 \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_server_time}{Model\+Server\+Time}} $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_ad71e381648a8e4ff60edf979ba7b1681}{Check\+Server\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Test connectivity to Rest \mbox{\hyperlink{namespace_binance_1_1_a_p_i}{A\+PI}} and get the current server time Weight\+:1 \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_order_book}{Model\+Order\+Book}} $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a25bc397a58a80f0eac6f654643aa031d}{Get\+Order\+Book}} (string symbol, int limit=100)
+\begin{DoxyCompactList}\small\item\em Get order book for specific symbol \end{DoxyCompactList}\item 
+Task$<$ I\+Enumerable$<$ \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_recent_trades_list}{Model\+Recent\+Trades\+List}} $>$ $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a70cc0e69c2c24d1737842411c5e45d1c}{Get\+Recent\+Trades\+List}} (string symbol, int limit=500)
+\begin{DoxyCompactList}\small\item\em Get recent trades for given symbol \end{DoxyCompactList}\item 
+Task$<$ I\+Enumerable$<$ \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_aggregate_trades}{Model\+Aggregate\+Trades}} $>$ $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a8db23742d48ca5de7b72c7f5170668ea}{Get\+Aggregate\+Trades}} (string symbol, long from\+Id=0, long start\+Time=0, long end\+Time=0, int limit=500)
+\begin{DoxyCompactList}\small\item\em Get compressed, aggregate trades. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_current_average_price}{Model\+Current\+Average\+Price}} $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a04e637bbc6cbc9af58028e86ab5c543d}{Get\+Current\+Average\+Price}} (string symbol)
+\begin{DoxyCompactList}\small\item\em Get current average price for given symbol. \end{DoxyCompactList}\item 
+Task$<$ dynamic $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_afc83663e1ff19384fe41b8714fde6d0a}{Get\+Ticker24\+Hr\+Price\+Change}} (string symbol)
+\begin{DoxyCompactList}\small\item\em 24 hour rolling window price change statistics. Careful when accessing this with no symbol. \end{DoxyCompactList}\item 
+Task$<$ dynamic $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_aa54e580f11d25cc167553558d7a331c0}{Get\+Symbol\+Price}} (string symbol)
+\begin{DoxyCompactList}\small\item\em Latest price for a symbol or symbols. \end{DoxyCompactList}\item 
+Task$<$ dynamic $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a8bebf090abc793e3a3e75975ad94b226}{Get\+Symbol\+Order\+Book}} (string symbol)
+\begin{DoxyCompactList}\small\item\em Best price/qty on the order book for a symbol or symbols. \end{DoxyCompactList}\item 
+Task$<$ I\+Enumerable$<$ \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_candlestick}{Model\+Candlestick}} $>$ $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a5155a24b18f677ddc5cca1aa43f16b7b}{Get\+Candlestick\+Data}} (string symbol, Time\+Interval interval, Date\+Time? start\+Time=null, Date\+Time? end\+Time=null, int limit=500)
+\begin{DoxyCompactList}\small\item\em Get candlestick bars for a symbol Weight\+: 1 \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_exchange_info}{Model\+Exchange\+Info}} $>$ \mbox{\hyperlink{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_aa247376d0de79b937f4ea4480c65d50e}{Get\+Exchange\+Info}} (List$<$ string $>$ symbols)
+\begin{DoxyCompactList}\small\item\em Get current exchange trading rules and symbol information \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for \mbox{\hyperlink{namespace_binance}{Binance}} \mbox{\hyperlink{namespace_binance_1_1_a_p_i_1_1_client}{Client}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_ad71e381648a8e4ff60edf979ba7b1681}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_ad71e381648a8e4ff60edf979ba7b1681}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!CheckServerTime@{CheckServerTime}}
+\index{CheckServerTime@{CheckServerTime}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{CheckServerTime()}{CheckServerTime()}}
+{\footnotesize\ttfamily Task$<$\mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_server_time}{Model\+Server\+Time}}$>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Check\+Server\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Test connectivity to Rest \mbox{\hyperlink{namespace_binance_1_1_a_p_i}{A\+PI}} and get the current server time Weight\+:1 
+
+\begin{DoxyReturn}{Returns}
+Server time
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_ad915a5db8d50271a86cb68042fee6633}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a8db23742d48ca5de7b72c7f5170668ea}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a8db23742d48ca5de7b72c7f5170668ea}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!GetAggregateTrades@{GetAggregateTrades}}
+\index{GetAggregateTrades@{GetAggregateTrades}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{GetAggregateTrades()}{GetAggregateTrades()}}
+{\footnotesize\ttfamily Task$<$I\+Enumerable$<$\mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_aggregate_trades}{Model\+Aggregate\+Trades}}$>$ $>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Get\+Aggregate\+Trades (\begin{DoxyParamCaption}\item[{string}]{symbol,  }\item[{long}]{from\+Id = {\ttfamily 0},  }\item[{long}]{start\+Time = {\ttfamily 0},  }\item[{long}]{end\+Time = {\ttfamily 0},  }\item[{int}]{limit = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+
+
+Get compressed, aggregate trades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & Symbol to retrieve\\
+\hline
+{\em from\+Id} & Id to get aggregate trades\\
+\hline
+{\em start\+Time} & Timestamp in ms to get aggregate trades from I\+N\+C\+L\+U\+S\+I\+VE\\
+\hline
+{\em end\+Time} & Timestamp in ms to get aggregate trades until I\+N\+C\+L\+U\+S\+I\+VE\\
+\hline
+{\em limit} & Limit of records\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aggregate trades of symbol
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_a7fb320ad5a009e2fe50e900fdc52db7b}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a5155a24b18f677ddc5cca1aa43f16b7b}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a5155a24b18f677ddc5cca1aa43f16b7b}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!GetCandlestickData@{GetCandlestickData}}
+\index{GetCandlestickData@{GetCandlestickData}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{GetCandlestickData()}{GetCandlestickData()}}
+{\footnotesize\ttfamily Task$<$I\+Enumerable$<$\mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_candlestick}{Model\+Candlestick}}$>$ $>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Get\+Candlestick\+Data (\begin{DoxyParamCaption}\item[{string}]{symbol,  }\item[{Time\+Interval}]{interval,  }\item[{Date\+Time?}]{start\+Time = {\ttfamily null},  }\item[{Date\+Time?}]{end\+Time = {\ttfamily null},  }\item[{int}]{limit = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+
+
+Get candlestick bars for a symbol Weight\+: 1 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & Symbol to retrieve\\
+\hline
+{\em interval} & Time interval\\
+\hline
+{\em start\+Time} & Start time for candlestick data\\
+\hline
+{\em end\+Time} & End time for candlestick data\\
+\hline
+{\em limit} & Limit of records\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Enumerable parsed candlestick data
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_a2ae5c262e13e69158c717cefa4ac7db8}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a04e637bbc6cbc9af58028e86ab5c543d}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a04e637bbc6cbc9af58028e86ab5c543d}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!GetCurrentAveragePrice@{GetCurrentAveragePrice}}
+\index{GetCurrentAveragePrice@{GetCurrentAveragePrice}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{GetCurrentAveragePrice()}{GetCurrentAveragePrice()}}
+{\footnotesize\ttfamily Task$<$\mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_current_average_price}{Model\+Current\+Average\+Price}}$>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Get\+Current\+Average\+Price (\begin{DoxyParamCaption}\item[{string}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Get current average price for given symbol. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & Symbol to get price\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Average price of symbol
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_a9818a8aa22e682f9d776a8a7d8afb6e2}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_aa247376d0de79b937f4ea4480c65d50e}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_aa247376d0de79b937f4ea4480c65d50e}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!GetExchangeInfo@{GetExchangeInfo}}
+\index{GetExchangeInfo@{GetExchangeInfo}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{GetExchangeInfo()}{GetExchangeInfo()}}
+{\footnotesize\ttfamily Task$<$\mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_exchange_info}{Model\+Exchange\+Info}}$>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Get\+Exchange\+Info (\begin{DoxyParamCaption}\item[{List$<$ string $>$}]{symbols }\end{DoxyParamCaption})}
+
+
+
+Get current exchange trading rules and symbol information 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbols} & Symbol list. Can be empty.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Exchange traiding rules
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_aef9f912d9706fee2ecfe494f3eab6797}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a25bc397a58a80f0eac6f654643aa031d}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a25bc397a58a80f0eac6f654643aa031d}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!GetOrderBook@{GetOrderBook}}
+\index{GetOrderBook@{GetOrderBook}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{GetOrderBook()}{GetOrderBook()}}
+{\footnotesize\ttfamily Task$<$\mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_order_book}{Model\+Order\+Book}}$>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Get\+Order\+Book (\begin{DoxyParamCaption}\item[{string}]{symbol,  }\item[{int}]{limit = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+Get order book for specific symbol 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & Ticker symbol\\
+\hline
+{\em limit} & Limit of records\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Order book for symbol
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_a26a4c488e2fa052967694cc44c769d68}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a70cc0e69c2c24d1737842411c5e45d1c}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a70cc0e69c2c24d1737842411c5e45d1c}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!GetRecentTradesList@{GetRecentTradesList}}
+\index{GetRecentTradesList@{GetRecentTradesList}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{GetRecentTradesList()}{GetRecentTradesList()}}
+{\footnotesize\ttfamily Task$<$I\+Enumerable$<$\mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_models_1_1_market_data_1_1_model_recent_trades_list}{Model\+Recent\+Trades\+List}}$>$ $>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Get\+Recent\+Trades\+List (\begin{DoxyParamCaption}\item[{string}]{symbol,  }\item[{int}]{limit = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+
+
+Get recent trades for given symbol 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & Symbol to retrieve\\
+\hline
+{\em limit} & Limit of records, max 1000.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Recent trades list of symbol.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_a3e7e6549aa863c74f33e34781be9728d}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a8bebf090abc793e3a3e75975ad94b226}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_a8bebf090abc793e3a3e75975ad94b226}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!GetSymbolOrderBook@{GetSymbolOrderBook}}
+\index{GetSymbolOrderBook@{GetSymbolOrderBook}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{GetSymbolOrderBook()}{GetSymbolOrderBook()}}
+{\footnotesize\ttfamily Task$<$dynamic$>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Get\+Symbol\+Order\+Book (\begin{DoxyParamCaption}\item[{string}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Best price/qty on the order book for a symbol or symbols. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Order book of symbol or symbols.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_ad05751586d1c5559f55d3a4bf8448cff}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_aa54e580f11d25cc167553558d7a331c0}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_aa54e580f11d25cc167553558d7a331c0}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!GetSymbolPrice@{GetSymbolPrice}}
+\index{GetSymbolPrice@{GetSymbolPrice}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{GetSymbolPrice()}{GetSymbolPrice()}}
+{\footnotesize\ttfamily Task$<$dynamic$>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Get\+Symbol\+Price (\begin{DoxyParamCaption}\item[{string}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Latest price for a symbol or symbols. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lastest price for symbol or symbols
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_ac9c7773b3c0a4b0204b83826323a45ab}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_afc83663e1ff19384fe41b8714fde6d0a}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_afc83663e1ff19384fe41b8714fde6d0a}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!GetTicker24HrPriceChange@{GetTicker24HrPriceChange}}
+\index{GetTicker24HrPriceChange@{GetTicker24HrPriceChange}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{GetTicker24HrPriceChange()}{GetTicker24HrPriceChange()}}
+{\footnotesize\ttfamily Task$<$dynamic$>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Get\+Ticker24\+Hr\+Price\+Change (\begin{DoxyParamCaption}\item[{string}]{symbol }\end{DoxyParamCaption})}
+
+
+
+24 hour rolling window price change statistics. Careful when accessing this with no symbol. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & Symbol to get 24HR change\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Model of 24 HR Price change stats.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_a3a03992f868da0b26a5acf91b574ceb3}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+\mbox{\Hypertarget{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_ac0500165f4933c24ed07f8986e581dc5}\label{interface_binance_1_1_a_p_i_1_1_client_1_1_interfaces_1_1_i_binance_client_ac0500165f4933c24ed07f8986e581dc5}} 
+\index{Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}!TestConnectivity@{TestConnectivity}}
+\index{TestConnectivity@{TestConnectivity}!Binance.API.Client.Interfaces.IBinanceClient@{Binance.API.Client.Interfaces.IBinanceClient}}
+\doxysubsubsection{\texorpdfstring{TestConnectivity()}{TestConnectivity()}}
+{\footnotesize\ttfamily Task$<$dynamic$>$ Binance.\+A\+P\+I.\+Client.\+Interfaces.\+I\+Binance\+Client.\+Test\+Connectivity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Test connectivity to \mbox{\hyperlink{namespace_binance_1_1_a_p_i}{A\+PI}}. Weight\+:1 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_binance_1_1_a_p_i_1_1_client_1_1_binance_client_a619665b7c74e5bfc95e21c3e4584c74a}{Binance.\+A\+P\+I.\+Client.\+Binance\+Client}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Binance.\+A\+P\+I.\+Client/\+Interfaces/I\+Binance\+Client.\+cs\end{DoxyCompactItemize}
